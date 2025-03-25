@@ -89,6 +89,10 @@ Digunakan untuk memulai proses scraping, event ini yang memicu berjalannya event
     - `formatDateTimeToIndo` → Mengonversi format waktu Strava (UTC) ke format Indonesia (WIB).
     - `parseDistance` → Mengonversi jarak dari string ke float.
 
+4. ### Service FUnctions
+    - `getConfigByPhone` → Mengambil data API yang tersimpan di database.
+    - `postToDomyikado` → Mengirimkan data ke API yang diambil dari `getConfigByPhone`.
+
 ## Alur Scraping
 
 1. User mengirim pesan berisi link aktivitas Strava.
