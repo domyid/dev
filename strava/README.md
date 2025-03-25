@@ -66,7 +66,7 @@ Digunakan untuk memulai proses scraping, event ini yang memicu berjalannya event
 
 ## Struktur Fungsi
 
-1. `StravaActivityHandler`, `StravaActivityUpdateIfEmptyDataHandler`, `StravaIdentityHandler`, `StravaIdentityUpdateHandler`
+1. ### `StravaActivityHandler`, `StravaActivityUpdateIfEmptyDataHandler`, `StravaIdentityHandler`, `StravaIdentityUpdateHandler`
 
     - Fungsi utama yang menangani input dari pengguna.
     - Mengekstrak link Strava dari pesan pengguna.
@@ -74,7 +74,7 @@ Digunakan untuk memulai proses scraping, event ini yang memicu berjalannya event
     - memanggil fungsi scraping data.
     - menampilkan response ke bot.
 
-2. `scrapeStravaActivity`, `scrapeStravaActivityUpdate`, `scrapeStravaIdentity`
+2. ### `scrapeStravaActivity`, `scrapeStravaActivityUpdate`, `scrapeStravaIdentity`
 
     - Mengambil data dari link strava yang di kirim ke bot dengan scraping data menggunakan library GoColly.
     - Memeriksa data apakah sudah ada di database mongodb.
@@ -82,7 +82,7 @@ Digunakan untuk memulai proses scraping, event ini yang memicu berjalannya event
     - Menandai data sebagai Valid, Invalid, atau Fraudulent ketika menyimpan data ke database.
     - Ketika data yang disimpan Valid, maka akan melakukan POST data ke database web domyid untuk menyimpan data pengguna ke collection user dan poinstrava.
 
-3. Helper Functions
+3. ### Helper Functions
 
     - `extractStravaLink` → Mengekstrak URL dari pesan pengguna.
     - `extractContains` → Mengecek link url strava dari `extractStravaLink` apakah menggunakan domain web atau app. Kemudian mengambil full url strava dan id activity/athelete dari url tersebut.
@@ -103,7 +103,7 @@ Digunakan untuk memulai proses scraping, event ini yang memicu berjalannya event
 
 ## Contoh response
 
-1. Jika Aktivitas Valid
+1. ### Jika Aktivitas Valid
 
     ```
     Haiiii kak, *John Doe*! Berikut Progres Aktivitas kamu hari ini yaaa!! 😀
@@ -121,7 +121,7 @@ Digunakan untuk memulai proses scraping, event ini yang memicu berjalannya event
     Semangat terus, jangan lupa jaga kesehatan dan tetap semangat!! 💪🏻💪🏻💪🏻
     ```
 
-2. Jika Aktivitas Invalid
+2. ### Jika Aktivitas Invalid
 
     ```
     Maaf kak, sistem hanya dapat mengambil data aktivitas jalan dan lari. Silakan share link aktivitas jalan dan lari Strava kamu.
@@ -137,16 +137,16 @@ Digunakan untuk memulai proses scraping, event ini yang memicu berjalannya event
     Jangan lupa jaga kesehatan dan tetap semangat!! 💪🏻💪🏻💪🏻
     ```
 
-3. Jika Data Terindikasi Curang
+3. ### Jika Data Terindikasi Curang
 
     ```
     Jangan Curang donggg! Silahkan share record aktivitas yang benar dari Strava ya kak, bukan dibikin manual kaya gitu.
     Yang semangat dong... yang semangat dong...
     ```
 
-4. Jika Data Terdeteksi Sudah Ada
+4. ### Jika Data Terdeteksi Sudah Ada
 
-    - Jika Status Valid
+    - #### Jika Status Valid
 
         ```
         Maaf kak, *John Doe*! Kamu sudah pernah share aktivitas ini sebelumnya pada tanggal 18 Mar 2025 09:56 WIB! Berikut data aktivitas kamu yang sudah tersimpan.
@@ -166,7 +166,7 @@ Digunakan untuk memulai proses scraping, event ini yang memicu berjalannya event
         Semangat terus, jangan lupa jaga kesehatan dan tetap semangat!! 💪🏻💪🏻💪🏻
         ```
 
-    - Jika Status Invalid
+    - #### Jika Status Invalid
 
         ```
         Maaf kak, *John Doe*! Aktivitas yang kamu kirimkan tidak valid. Berikut datanya.
@@ -181,7 +181,7 @@ Digunakan untuk memulai proses scraping, event ini yang memicu berjalannya event
         Semangat terus, jangan lupa jaga kesehatan dan tetap semangat!! 💪🏻💪🏻💪🏻
         ```
 
-    - Jika Status Fraudulent
+    - #### Jika Status Fraudulent
 
         ```
         Jangan Curang donggg! Silahkan share record aktivitas yang benar dari Strava ya kak, bukan dibikin manual kaya gitu.
