@@ -89,7 +89,7 @@ Digunakan untuk memulai proses scraping, event ini yang memicu berjalannya event
     - `formatDateTimeToIndo` → Mengonversi format waktu Strava (UTC) ke format Indonesia (WIB).
     - `parseDistance` → Mengonversi jarak dari string ke float.
 
-4. ### Service FUnctions
+4. ### Service Functions
     - `getConfigByPhone` → Mengambil data API yang tersimpan di database.
     - `postToDomyikado` → Mengirimkan data ke API yang diambil dari `getConfigByPhone`.
 
@@ -105,7 +105,7 @@ Digunakan untuk memulai proses scraping, event ini yang memicu berjalannya event
 5. Jika data valid, informasi dikirim kembali ke user.
 6. Jika ternyata user mengirimkan lagi link yang sama, informasi data yang sudah ada akan dikirimkan lagi ke user tanpa menyimpan data.
 
-## Contoh response
+## Contoh Response
 
 1. ### Jika Aktivitas Valid
 
