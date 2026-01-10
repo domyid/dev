@@ -22,9 +22,9 @@ Tahap ini menentukan kejadian apa yang memicu pengiriman data ke server. Pertama
 
 ![](trigger1.jpeg)
 
-!(trigger2.jpeg)
+![](trigger2.jpeg)
 
-!(trigger3.jpeg)
+![](trigger3.jpeg)
 
 MacroDroid dikonfigurasi untuk memantau notifikasi masuk secara spesifik dari aplikasi GoPay Merchant. Variabel teks dalam notifikasi tersebut (seperti nominal dan status) akan ditangkap untuk diproses lebih lanjut.
 
